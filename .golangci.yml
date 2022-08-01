@@ -1,0 +1,26 @@
+# https://github.com/golangci/golangci-lint/blob/master/.golangci.reference.yml
+run:
+  skip-files:
+    - main.go
+linters:
+  # disable-all: true
+  enable-all: true
+  disable:
+    - gomnd
+    - nonamedreturns
+    - wsl # good for style, but needs settings
+    - varnamelen
+
+  # presets:
+  #   - performance
+# linters-settings:
+  # gocritic:
+    # enabled-tags:
+    #   - performance
+    # disabled-tags:
+    #   - style
+    #   - opinionated
+    #disabled-checks:
+    #  - assignOp
+  # varnamelen:
+  #   max-distance: 20
