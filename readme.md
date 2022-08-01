@@ -4,7 +4,7 @@
 
 `Password` is the encoded Metroid password which can be output as a formatted password string.
 
-`lua/metroid_pw_tester.lua` is a basic script for the FCEUX NES emulator which can be used to test Metroid passwords and their decoded output in the emulator.
+[metroid_pw_tester_lua](lua/metroid_pw_tester.lua) is a simple LUA script for the FCEUX NES emulator which can be used to test Metroid passwords and their decoded output in the emulator.
 
 ## References
 
@@ -14,6 +14,6 @@
 - [True Peace In Space online password generator tool](https://www.truepeacein.space/)
 - [True Peace In Space source code](https://github.com/alexras/truepeacein.space)
 
-Misc
+### Misc
 
 - [CLI GUI](https://github.com/charmbracelet/bubbletea)
