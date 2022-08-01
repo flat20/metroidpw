@@ -1,3 +1,4 @@
+// Package metroidpw provides functions for encoding and decoding passwords for the 8-bit game Metroid on the NES.
 package metroidpw
 
 import (
@@ -6,8 +7,8 @@ import (
 
 var ErrChecksum = errors.New("password has an incorrect checksum")
 
-// encode6 converts 18 8-bit values in to 24 6-bit values.
-func encode6(gd *GameData) (pw Password) {
+// unpack converts 18 8-bit values in to 24 6-bit values.
+func unpack(gd *GameData) (pw Password) {
 	for i := 0; i < 6; i++ {
 		gi := i * 3
 		pi := i * 4
@@ -20,8 +21,8 @@ func encode6(gd *GameData) (pw Password) {
 	return
 }
 
-// decode6 converts 24 6-bit value Password data to a 18 8-bit value GameData.
-func decode6(pw *Password) (gd GameData) {
+// pack converts 24 6-bit value Password data to a 18 8-bit value GameData.
+func pack(pw *Password) (gd GameData) {
 	for i := 0; i < 6; i++ {
 		pi := i * 4
 		gi := i * 3
@@ -90,7 +91,7 @@ func Encode(gd *GameData) Password {
 	count := gd.Shift()
 	rotateRight(gd, count)
 
-	pw := encode6(gd)
+	pw := unpack(gd)
 
 	return pw
 }
@@ -98,7 +99,7 @@ func Encode(gd *GameData) Password {
 // Decode Password in to GameData. Incorrect checksums return errChecksum but also return the parsed GameData
 // so that checksum inconsistencies can be repaired.
 func Decode(pw *Password) (GameData, error) {
-	gd := decode6(pw)
+	gd := pack(pw)
 
 	count := gd[shiftByte]
 	rotateLeft(&gd, count)
