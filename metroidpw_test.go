@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/flat20/metroidpw/v2"
+	"github.com/flat20/metroidpw"
 )
 
 func TestEncode(t *testing.T) {

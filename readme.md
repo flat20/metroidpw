@@ -14,6 +14,16 @@
 - [True Peace In Space online password generator tool](https://www.truepeacein.space/)
 - [True Peace In Space source code](https://github.com/alexras/truepeacein.space)
 
-### Misc
+The 18 bytes of Metroid game data would look something like this if one wanted to unsafe.Pointer over the bytes:
 
-- [CLI GUI](https://github.com/charmbracelet/bubbletea)
+```go
+type data struct { // 18 bytes
+	mapItemsBits [8]uint8
+	samusHasBits uint8 
+	missiles     uint8 
+	gameAge      uint32 // only 24-bits used, but overflows to last byte
+	bossKillBits uint8 
+	shiftByte    uint8 
+	checksum     uint8 
+}
+```

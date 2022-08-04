@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/flat20/metroidpw/v2"
+	"github.com/flat20/metroidpw"
 )
 
 func TestParsePassword(t *testing.T) {

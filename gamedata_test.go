@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/flat20/metroidpw/v2"
+	"github.com/flat20/metroidpw"
 )
 
 func TestSetBit(t *testing.T) {

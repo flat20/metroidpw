@@ -2,6 +2,28 @@ package metroidpw
 
 import "encoding/binary"
 
+const (
+	BitMaruMariTaken    uint = 0 // Items taken of the map
+	BitBombsTaken       uint = 6
+	BitVariaTaken       uint = 11
+	BitHighJumpTaken    uint = 24
+	BitScrewAttackTaken uint = 26
+
+	BitBombs       uint = 72 // Samus weapons enabled
+	BitHighJump    uint = 73
+	BitLongBeam    uint = 74
+	BitScrewAttack uint = 75
+	BitMaruMari    uint = 76
+	BitWaveBeam    uint = 77
+	BitIceBeam     uint = 78
+
+	BitHasSwimsuit uint = 71
+
+	BitStartNorfair uint = 64 // Map starting positions
+	BitStartKraid   uint = 65 // All 3 off = Brinstar
+	BitStartRidley  uint = 66 // All 3 on = Tourian
+)
+
 // GameData holds the raw game state data.
 type GameData [18]byte
 
