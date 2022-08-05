@@ -18,12 +18,12 @@ The 18 bytes of Metroid game data would look something like this if one wanted t
 
 ```go
 type data struct { // 18 bytes
-	mapItemsBits [8]uint8
-	samusHasBits uint8 
-	missiles     uint8 
-	gameAge      uint32 // only 24-bits used, but overflows to last byte
-	bossKillBits uint8 
-	shiftByte    uint8 
-	checksum     uint8 
+	mapItemsBits     [8]uint8
+	samusHasItemBits uint8 
+	missiles         uint8 
+	gameAge          uint32 // only 24-bits used, but overflows to last byte
+	bossKillBits     uint8 
+	shiftByte        uint8 
+	checksum         uint8 
 }
 ```
